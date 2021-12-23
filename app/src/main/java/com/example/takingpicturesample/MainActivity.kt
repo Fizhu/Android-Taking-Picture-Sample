@@ -171,6 +171,8 @@ class MainActivity : AppCompatActivity() {
         if (!this.isFinishing) {
             val dialog = Dialog(this)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(false)
+            dialog.setContentView(R.layout.permission_denied_dialog)
             dialog.window?.apply {
                 setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 setBackgroundDrawableResource(android.R.color.transparent)
@@ -179,8 +181,6 @@ class MainActivity : AppCompatActivity() {
                     WindowManager.LayoutParams.MATCH_PARENT
                 )
             }
-            dialog.setCancelable(false)
-            dialog.setContentView(R.layout.permission_denied_dialog)
             val tvTitle = dialog.findViewById(R.id.tv_title) as TextView
             val tvMsg = dialog.findViewById(R.id.tv_msg) as TextView
             val btnOkay: Button = dialog.findViewById(R.id.btn_okay) as Button
