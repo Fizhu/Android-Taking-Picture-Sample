@@ -26,10 +26,11 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_baseline_camera_alt_24"
         android:visibility="gone"
+        app:backgroundTint="@color/purple_500"
         app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="@+id/fab_assessment_listing"
-        app:layout_constraintEnd_toEndOf="@+id/fab_assessment_listing"
-        app:layout_constraintStart_toStartOf="@+id/fab_assessment_listing"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_main"
+        app:layout_constraintEnd_toEndOf="@+id/fab_main"
+        app:layout_constraintStart_toStartOf="@+id/fab_main"
         app:tint="@color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -41,13 +42,13 @@
         android:visibility="gone"
         app:backgroundTint="@color/purple_500"
         app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="@+id/fab_assessment_listing"
-        app:layout_constraintEnd_toEndOf="@+id/fab_assessment_listing"
-        app:layout_constraintStart_toStartOf="@+id/fab_assessment_listing"
+        app:layout_constraintBottom_toBottomOf="@+id/fab_main"
+        app:layout_constraintEnd_toEndOf="@+id/fab_main"
+        app:layout_constraintStart_toStartOf="@+id/fab_main"
         app:tint="@color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_assessment_listing"
+        android:id="@+id/fab_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_horizontal_margin"
