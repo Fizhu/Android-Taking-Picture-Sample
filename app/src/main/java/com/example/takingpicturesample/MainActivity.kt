@@ -1,6 +1,7 @@
 package com.example.takingpicturesample
 
 import android.Manifest
+import android.animation.Animator
 import android.app.Activity
 import android.app.Dialog
 import android.content.ContentValues
@@ -108,17 +109,57 @@ class MainActivity : AppCompatActivity() {
         binding.fabGalery.visible()
         binding.frameBg.visible()
         binding.fabMain.animate().rotationBy(180F)
+        binding.cvCamera.animate().translationY(-resources.getDimension(R.dimen.standard_74))
+        binding.cvGalery.animate().translationY(-resources.getDimension(R.dimen.standard_128))
         binding.fabCamera.animate().translationY(-resources.getDimension(R.dimen.standard_74))
         binding.fabGalery.animate().translationY(-resources.getDimension(R.dimen.standard_128))
+            .setListener(object : Animator.AnimatorListener {
+                override fun onAnimationStart(p0: Animator?) {
+                }
+
+                override fun onAnimationEnd(p0: Animator?) {
+                    if (View.VISIBLE == binding.frameBg.visibility) {
+                        binding.cvCamera.visible()
+                        binding.cvGalery.visible()
+                    }
+                }
+
+                override fun onAnimationCancel(p0: Animator?) {
+                }
+
+                override fun onAnimationRepeat(p0: Animator?) {
+                }
+
+            })
     }
 
     private fun closeFABMenu() {
         binding.frameBg.gone()
         binding.fabCamera.gone()
         binding.fabGalery.gone()
+        binding.cvCamera.gone()
+        binding.cvGalery.gone()
         binding.fabMain.animate().rotation(0F)
         binding.fabCamera.animate().translationY(0f)
         binding.fabGalery.animate().translationY(0f)
+            .setListener(object : Animator.AnimatorListener {
+                override fun onAnimationStart(p0: Animator?) {
+                }
+
+                override fun onAnimationEnd(p0: Animator?) {
+                    if (View.GONE == binding.frameBg.visibility) {
+                        binding.cvCamera.gone()
+                        binding.cvGalery.gone()
+                    }
+                }
+
+                override fun onAnimationCancel(p0: Animator?) {
+                }
+
+                override fun onAnimationRepeat(p0: Animator?) {
+                }
+
+            })
     }
 
     private val cameraLauncher =

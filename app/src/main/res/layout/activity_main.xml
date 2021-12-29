@@ -47,6 +47,50 @@
         app:layout_constraintStart_toStartOf="@+id/fab_main"
         app:tint="@color/white" />
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/fab_camera"
+        app:layout_constraintEnd_toStartOf="@id/fab_camera"
+        app:layout_constraintTop_toTopOf="@id/fab_camera">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:textColor="@android:color/black"
+            android:text="@string/camera"
+            android:textSize="12sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_galery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/fab_galery"
+        app:layout_constraintEnd_toStartOf="@id/fab_galery"
+        app:layout_constraintTop_toTopOf="@id/fab_galery">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:textColor="@android:color/black"
+            android:text="@string/galery"
+            android:textSize="12sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_main"
         android:layout_width="wrap_content"
